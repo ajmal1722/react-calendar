@@ -18,7 +18,7 @@ const Events = () => {
     console.log('state:', events);
     
     return (
-        <div className='bg-indigo-600 lg:mx-16 sm:w-96  lg:mt-0 mt-6 mx-2 py-4'>
+        <div className='bg-gray-800 lg:mx-16 sm:w-96  lg:mt-0 mt-6 mx-2 py-4 rounded-lg'>
             <div className='flex justify-between mx-2 my-4'>
                 <h1 className='text-3xl font-medium mx-4'>
                     { date }

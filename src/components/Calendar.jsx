@@ -25,7 +25,7 @@ const Calendar = () => {
     console.log('Event date:', selecedDate)
 
     return (
-        <div className='bg-indigo-200 p-2'>
+        <div className=' p-2'>
             <div className="sm:w-96">
                 <ReactCalendar onChange={onChange} value={value} onClickDay={enableModal}/>
             </div>
