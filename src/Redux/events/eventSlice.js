@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const eventSlice = createSlice({
     name: 'events', 
     initialState: {
-        value: ['Hello', 'sdfsf'],
+        value: [],
     },
     reducers: {
         addToEvents: (state, action) => {

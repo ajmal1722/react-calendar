@@ -5,20 +5,24 @@ import { addToEvents } from '../Redux/events/eventSlice'
 
 const Calendar = () => {
     const [value, onChange] = useState(new Date());
+    const options = { month: 'short', day: 'numeric', year: 'numeric'}
+    const selecedDate = value.toLocaleDateString('en-US', options);
     const [showModal, setShowModal] = useState(false);
     const [eventText, setEventText] = useState('');
     const events = useSelector(state => state.events.value);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const enableModal = () => {
         setShowModal(prevState => !prevState)
     }
 
     const handleEvents = () => {
-        dispatch(addToEvents(eventText))
+        dispatch(addToEvents({ date: selecedDate, event: eventText }))
         enableModal()
         setEventText(''); 
     }
+
+    console.log('Event date:', selecedDate)
 
     return (
         <div className='bg-indigo-200 p-2'>
