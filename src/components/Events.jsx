@@ -1,8 +1,14 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { FaDeleteLeft } from 'react-icons/fa6'
+import { removeFromEvents } from '../Redux/events/eventSlice';
 
 const Events = () => {
     const events = useSelector(state => state.events.value);
+    const dispatch = useDispatch();
+
+    const handleDeleteEvent = (index) => {
+        dispatch(removeFromEvents(index))
+    }
 
     const today = new Date();
     const date = today.getDate();
@@ -27,7 +33,7 @@ const Events = () => {
                         <div>{event.event}</div>
                         <div>{event.date}</div>
                         <div className="flex items-center justify-center h-full mt-1">
-                            <FaDeleteLeft />
+                            <FaDeleteLeft onClick={() => handleDeleteEvent(index)} className='cursor-pointer'/>
                         </div>
                     </div>
                 ))}
