@@ -1,4 +1,6 @@
-# React Calendar where you can add events.
+# React Calendar.
+
+Developed a React Calendar application that allows users to save and manage events based on dates. 
 
 
 
